@@ -1,0 +1,1 @@
+export const SERVICE_GRADIENT = "linear-gradient(141deg, rgba(84, 1, 1, 1) 0%, rgba(247, 0, 58, 1) 17%, rgba(235, 45, 210, 1) 47%, rgba(183, 63, 235, 1) 63%, rgba(131, 26, 161, 1) 81%, rgba(56, 14, 69, 1) 100%)"; 
