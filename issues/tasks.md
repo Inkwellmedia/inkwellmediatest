@@ -33,3 +33,13 @@
 -   **Solution:** Added an attractive call button with phone icon, gradient background matching the brand colors, hover animations, and proper tel: link functionality
 
 ---
+
+-   **Fix in the file `/src/sections/HomeServices.tsx` the 2nd card in mobile section the know more button overflows and render outside of the card make the height of all cards dynamic so it will took same height for all in desktop and tablets and phones and show all content inside the card itself**
+-   Status: ✅ Done
+-   **Solution:** Restructured card layout with proper flexbox distribution, made cards responsive with `items-stretch`, fixed content overflow with `flex-grow` and `overflow-hidden`, reduced button size and padding, and ensured all content fits within the fixed 500px height
+
+---
+
+-   **Fix spacing in between the `/src/sections/HomeHero.tsx` main headline on mobile devices as it's having different font and also make sure to display it attractively in mobile devices, in center for mobile only rest keep same.**
+-   Status: ✅ Done
+-   **Solution:** Added responsive text alignment with `text-center lg:text-left` for main content, centered all elements (headline, paragraph, buttons) on mobile while maintaining left alignment on desktop, and improved overall mobile layout consistency

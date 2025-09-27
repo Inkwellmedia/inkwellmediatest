@@ -93,7 +93,7 @@ const HomeServices: React.FC = () => (
 
             {/* Services Grid */}
             <motion.div
-                className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
+                className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch'
                 initial='hidden'
                 whileInView='visible'
                 viewport={{ once: true }}
@@ -102,7 +102,7 @@ const HomeServices: React.FC = () => (
                 {servicesData.map((svc) => (
                     <motion.div
                         key={svc.id}
-                        className='service-card'
+                        className='service-card flex'
                         variants={itemVariants}
                     >
                         <ServiceCard service={svc} />
@@ -116,10 +116,11 @@ const HomeServices: React.FC = () => (
 function ServiceCard({ service }: { service: Service }) {
     return (
         <div
-            className='group mx-auto'
+            className='group mx-auto w-full'
             style={{
                 perspective: '1000px',
-                width: '350px', // Fixed width for the card
+                width: '100%',
+                maxWidth: '350px',
                 height: '500px', // Fixed height for the card
             }}
         >
@@ -184,7 +185,7 @@ function ServiceCard({ service }: { service: Service }) {
 
                 {/* Back of the card */}
                 <div
-                    className='absolute inset-0 flex flex-col justify-between bg-white/5 backdrop-blur-lg p-6 border-2 border-white rounded-2xl'
+                    className='absolute inset-0 flex flex-col bg-white/5 backdrop-blur-lg p-4 border-2 border-white rounded-2xl'
                     style={{
                         transform: 'rotateY(180deg) translateZ(0)', // Add translateZ for iOS
                         WebkitTransform: 'rotateY(180deg) translateZ(0)', // iOS Safari support
@@ -195,65 +196,76 @@ function ServiceCard({ service }: { service: Service }) {
                         border: '1px solid #FF6A3D',
                     }}
                 >
-                    <h3
-                        style={{ fontFamily: 'Electrolize' }}
-                        className='text-2xl font-semibold text-white mb-4 text-center'
-                    >
-                        {service.id === 'video' ? (
-                            <span
-                                dangerouslySetInnerHTML={{
-                                    __html: service.title,
-                                }}
-                            />
-                        ) : (
-                            service.title
-                        )}
-                    </h3>
-                    {/* Description */}
-                    <p
-                        style={{ fontFamily: 'Electrolize' }}
-                        className='text-white/80 mb-6 flex-grow text-center'
-                    >
-                        {service.description}
-                    </p>
+                    {/* Header section */}
+                    <div className='flex-shrink-0 mb-3'>
+                        <h3
+                            style={{ fontFamily: 'Electrolize' }}
+                            className='text-xl font-semibold text-white text-center leading-tight'
+                        >
+                            {service.id === 'video' ? (
+                                <span
+                                    dangerouslySetInnerHTML={{
+                                        __html: service.title,
+                                    }}
+                                />
+                            ) : (
+                                service.title
+                            )}
+                        </h3>
+                    </div>
 
-                    {/* Tags */}
-                    <div className='flex flex-wrap justify-center gap-2 mb-6'>
+                    {/* Description section - flexible */}
+                    <div className='flex-grow overflow-hidden mb-4'>
+                        <p
+                            style={{
+                                fontFamily: 'Electrolize',
+                                fontSize: '0.9rem',
+                                lineHeight: '1.4',
+                            }}
+                            className='text-white/80 text-center h-full overflow-y-auto'
+                        >
+                            {service.description}
+                        </p>
+                    </div>
+
+                    {/* Tags section */}
+                    <div className='flex-shrink-0 flex flex-wrap justify-center gap-1 mb-4'>
                         {service.tags.map((tag) => (
                             <span
                                 key={tag}
-                                className='text-xs bg-[#FF6A3D]/20 text-white px-3 py-1 rounded-full'
+                                className='text-xs bg-[#FF6A3D]/20 text-white px-2 py-1 rounded-full'
                             >
                                 {tag}
                             </span>
                         ))}
                     </div>
 
-                    {/* "Know More" Button */}
-                    <motion.div
-                        whileHover={{ x: 5 }}
-                        className='flex justify-center mt-auto'
-                    >
-                        <Link href='/services' passHref>
-                            <Button
-                                component='a'
-                                variant='outlined'
-                                sx={{
-                                    borderColor: '#FF6A3D',
-                                    color: '#FF6A3D',
-                                    py: 1,
-                                    px: 4,
-                                    borderRadius: '9999px',
-                                    ':hover': {
-                                        background: '#FF6A3D',
-                                        color: '#fff',
-                                    },
-                                }}
-                            >
-                                Know More
-                            </Button>
-                        </Link>
-                    </motion.div>
+                    {/* "Know More" Button - fixed at bottom */}
+                    <div className='flex-shrink-0 flex justify-center'>
+                        <motion.div whileHover={{ x: 5 }}>
+                            <Link href='/services' passHref>
+                                <Button
+                                    component='a'
+                                    variant='outlined'
+                                    size='small'
+                                    sx={{
+                                        borderColor: '#FF6A3D',
+                                        color: '#FF6A3D',
+                                        py: 0.5,
+                                        px: 3,
+                                        fontSize: '0.875rem',
+                                        borderRadius: '9999px',
+                                        ':hover': {
+                                            background: '#FF6A3D',
+                                            color: '#fff',
+                                        },
+                                    }}
+                                >
+                                    Know More
+                                </Button>
+                            </Link>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
 

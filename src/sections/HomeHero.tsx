@@ -112,7 +112,7 @@ const HomeHero: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8 }}
-                        className='w-full lg:w-7xl text-white text-left space-y-6 mb-22'
+                        className='w-full lg:w-7xl text-white text-center lg:text-left space-y-6 mb-22'
                     >
                         <motion.h1
                             initial={{ opacity: 0 }}
@@ -183,7 +183,7 @@ const HomeHero: React.FC = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
-                            className='text-lg md:text-xl max-w-7xl text-left mt-10'
+                            className='text-lg md:text-xl max-w-7xl text-center lg:text-left mt-10'
                             style={{
                                 fontFamily: "'Titillium Web', sans-serif",
                             }}
@@ -239,7 +239,7 @@ const HomeHero: React.FC = () => {
                                 type: 'spring',
                                 stiffness: 120,
                             }}
-                            className='flex flex-col sm:flex-row gap-6 justify-start items-center flex-wrap pt-10'
+                            className='flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center flex-wrap pt-10'
                         >
                             {/* Call Button */}
                             <motion.a
