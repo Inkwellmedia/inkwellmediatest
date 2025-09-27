@@ -31,7 +31,9 @@ const HomeVideo: React.FC = () => {
     useEffect(() => {
         // Always keep the video muted, do not unmute on visibility
         const handleMute = () => {
-            const iframe = document.getElementById('wistia_iframe') as HTMLIFrameElement;
+            const iframe = document.getElementById(
+                'wistia_iframe'
+            ) as HTMLIFrameElement;
             if (iframe && iframe.contentWindow) {
                 iframe.contentWindow.postMessage(
                     JSON.stringify({
@@ -50,25 +52,30 @@ const HomeVideo: React.FC = () => {
         <div
             ref={containerRef}
             style={{
-                minHeight: isMobile ? "60vh" : '120vh',
+                minHeight: isMobile ? '60vh' : '120vh',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 paddingTop: isMobile ? '2.5rem' : '4rem',
                 paddingBottom: isMobile ? '2rem' : '4rem',
-                background: "linear-gradient(316deg, rgba(194, 0, 0, 1) 0%, rgba(143, 0, 0, 1) 10%, rgba(116, 0, 0, 1) 20%, rgba(68, 0, 0, 1) 30%, rgba(5, 0, 0, 1) 64%)",
+                background:
+                    'linear-gradient(316deg, rgba(194, 0, 0, 1) 0%, rgba(143, 0, 0, 1) 10%, rgba(116, 0, 0, 1) 20%, rgba(68, 0, 0, 1) 30%, rgba(5, 0, 0, 1) 64%)',
             }}
         >
-            <h2 style={{
-                fontFamily: 'Oxanium, sans-serif',
-                color: '#fff',
-                fontSize: '3rem',
-                fontWeight: 500,
-            }}>
-                <span style={{
-                    fontSize: '4.2rem',
-                    fontWeight: 700,
-                }}>
+            <h2
+                style={{
+                    fontFamily: 'Oxanium, sans-serif',
+                    color: '#fff',
+                    fontSize: '3rem',
+                    fontWeight: 500,
+                }}
+            >
+                <span
+                    style={{
+                        fontSize: '4.2rem',
+                        fontWeight: 700,
+                    }}
+                >
                     Showreel
                 </span>{' '}
             </h2>
@@ -83,21 +90,27 @@ const HomeVideo: React.FC = () => {
                     overflow: 'hidden',
                 }}
             >
-                <div style={{ position: 'relative', width: '100%', paddingTop: '52.71%' }}>
-                    <iframe 
-                        id="wistia_iframe"
-                        src="https://fast.wistia.net/embed/iframe/8a2rka6o3m?autoplay=0&muted=1&controls=volume" 
-                        frameBorder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        loading="lazy" 
-                        title="Wistia Video Showreel" 
-                        style={{ 
-                            position: 'absolute', 
-                            top: 0, 
-                            left: 0, 
-                            width: '100%', 
-                            height: '100%', 
-                            borderRadius: '8px' 
+                <div
+                    style={{
+                        position: 'relative',
+                        width: '100%',
+                        paddingTop: '52.71%',
+                    }}
+                >
+                    <iframe
+                        id='wistia_iframe'
+                        src='https://fast.wistia.net/embed/iframe/8a2rka6o3m?autoplay=1&muted=1&controls=volume&playButton=false'
+                        frameBorder='0'
+                        allow='autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media'
+                        loading='lazy'
+                        title='Wistia Video Showreel'
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            borderRadius: '8px',
                         }}
                     />
                 </div>

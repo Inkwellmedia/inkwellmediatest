@@ -61,23 +61,45 @@ const HomeHero: React.FC = () => {
     return (
         <Typography sx={{}}>
             <section
-                className='fixed min-h-screen h-full bg-cover bg-center pt-20'
+                className='relative min-h-screen h-full pt-20'
                 style={{
-                    backgroundImage:
-                        "url('https://ik.imagekit.io/Shubham2285/bggggg.png?updatedAt=1751625459008')",
-                    backgroundAttachment: 'fixed',
-                    // iOS fallback - use a pseudo-element for fixed background
                     position: 'relative',
+                    overflow: 'hidden',
                 }}
             >
-                {/* iOS fallback background */}
+                {/* iOS-compatible background */}
                 <div
-                    className='absolute inset-0 bg-cover bg-center'
+                    className='absolute inset-0 bg-cover bg-center bg-no-repeat'
                     style={{
                         backgroundImage:
                             "url('https://ik.imagekit.io/Shubham2285/bggggg.png?updatedAt=1751625459008')",
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
                         backgroundAttachment: 'scroll', // Use scroll for iOS compatibility
+                        zIndex: -2,
+                        // iOS-specific fixes
+                        WebkitTransform: 'translateZ(0)',
+                        transform: 'translateZ(0)',
+                        WebkitBackfaceVisibility: 'hidden',
+                        backfaceVisibility: 'hidden',
+                    }}
+                />
+                {/* Additional iOS fallback with transform3d */}
+                <div
+                    className='absolute inset-0 bg-cover bg-center bg-no-repeat'
+                    style={{
+                        backgroundImage:
+                            "url('https://ik.imagekit.io/Shubham2285/bggggg.png?updatedAt=1751625459008')",
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
                         zIndex: -1,
+                        // iOS hardware acceleration
+                        WebkitTransform: 'translate3d(0, 0, 0)',
+                        transform: 'translate3d(0, 0, 0)',
+                        WebkitBackfaceVisibility: 'hidden',
+                        backfaceVisibility: 'hidden',
                     }}
                 />
                 {/* Dark Overlay */}
@@ -96,37 +118,49 @@ const HomeHero: React.FC = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.2, duration: 0.8 }}
-                            className='text-5xl md:text-8xl mt-[-20px]'
-                            style={{ lineHeight: '0.8' }}
+                            className='text-4xl sm:text-5xl md:text-8xl'
+                            style={{
+                                lineHeight: '0.9',
+                                marginTop: '0',
+                                // iOS-specific fixes
+                                WebkitTextSizeAdjust: '100%',
+                                textSizeAdjust: '100%',
+                            }}
                         >
                             <span
                                 style={{
                                     fontFamily: 'Impact, sans-serif',
                                     letterSpacing: '0.05em',
+                                    display: 'block',
+                                    marginBottom: '0.1em',
                                 }}
                             >
                                 Every
-                            </span>{' '}
+                            </span>
                             <span
                                 style={{
                                     fontFamily: 'Kumar One Outline, cursive',
+                                    display: 'block',
+                                    marginBottom: '0.15em',
                                 }}
                             >
                                 Brand
                             </span>
-                            <br />
                             <span
                                 style={{
                                     fontFamily: 'Impact, sans-serif',
                                     letterSpacing: '0.05em',
+                                    display: 'block',
+                                    marginBottom: '0.1em',
                                 }}
                             >
                                 Has its own
-                            </span>{' '}
+                            </span>
                             <span
-                                className='block mt-1 md:inline md:mt-0'
                                 style={{
                                     fontFamily: 'Kumar One Outline, cursive',
+                                    display: 'block',
+                                    marginBottom: '0.2em',
                                 }}
                             >
                                 Story
@@ -134,11 +168,11 @@ const HomeHero: React.FC = () => {
                             <span
                                 style={{
                                     display: 'block',
-                                    marginTop: '-0.1em', // Reduced space above for mobile
-                                    fontSize: '2rem', // Slightly smaller if needed
+                                    fontSize: 'clamp(1.2rem, 4vw, 2rem)',
                                     fontFamily: 'Impact, sans-serif',
                                     letterSpacing: '0.05em',
-                                    lineHeight: 1.1, // Tighter line height
+                                    lineHeight: 1.2,
+                                    marginTop: '0.1em',
                                 }}
                             >
                                 And we narrate it into visuals.
@@ -206,7 +240,33 @@ const HomeHero: React.FC = () => {
                                 stiffness: 120,
                             }}
                             className='flex flex-col sm:flex-row gap-6 justify-start items-center flex-wrap pt-10'
-                        ></motion.div>
+                        >
+                            {/* Call Button */}
+                            <motion.a
+                                href='tel:+919082531628'
+                                className='group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-500 to-red-600 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-700'
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                style={{
+                                    background:
+                                        'linear-gradient(135deg, #FF6A3D 0%, #E53E3E 100%)',
+                                    boxShadow:
+                                        '0 4px 15px rgba(255, 106, 61, 0.3)',
+                                }}
+                            >
+                                <svg
+                                    className='w-6 h-6 mr-3 group-hover:animate-pulse'
+                                    fill='currentColor'
+                                    viewBox='0 0 20 20'
+                                >
+                                    <path d='M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z' />
+                                </svg>
+                                <span className='font-[Oxanium] tracking-wide'>
+                                    Call Now: +91 9082531628
+                                </span>
+                                <div className='absolute inset-0 rounded-lg bg-gradient-to-r from-red-400 to-red-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300'></div>
+                            </motion.a>
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>
