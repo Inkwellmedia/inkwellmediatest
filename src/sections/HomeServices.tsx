@@ -219,8 +219,8 @@ function ServiceCard({ service }: { service: Service }) {
                         <p
                             style={{
                                 fontFamily: 'Electrolize',
-                                fontSize: '0.9rem',
-                                lineHeight: '1.4',
+                                fontSize: '1rem',
+                                lineHeight: '1.5',
                             }}
                             className='text-white/80 text-center h-full overflow-y-auto'
                         >

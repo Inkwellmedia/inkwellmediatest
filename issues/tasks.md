@@ -43,3 +43,11 @@
 -   **Fix spacing in between the `/src/sections/HomeHero.tsx` main headline on mobile devices as it's having different font and also make sure to display it attractively in mobile devices, in center for mobile only rest keep same.**
 -   Status: ✅ Done
 -   **Solution:** Added responsive text alignment with `text-center lg:text-left` for main content, centered all elements (headline, paragraph, buttons) on mobile while maintaining left alignment on desktop, and improved overall mobile layout consistency
+
+---
+
+-   **In file `/src/sections/HomeHero.tsx` the 'Brand' and the 'Every' both span should have some space in between and same for the 'Has its own' and 'Story'. Make sure to make space which makes it look good**
+-   Status: ✅ Done
+-   **Solution:** Restructured the headline layout by grouping related words together on the same line with proper spacing. Added `marginRight: '0.3em'` between "Every" and "Brand", and between "Has its own" and "Story" to create visually appealing spacing while maintaining the design integrity
+
+---

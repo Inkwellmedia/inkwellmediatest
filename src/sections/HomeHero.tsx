@@ -127,44 +127,59 @@ const HomeHero: React.FC = () => {
                                 textSizeAdjust: '100%',
                             }}
                         >
-                            <span
+                            {/* First line: Every Brand */}
+                            <div
                                 style={{
-                                    fontFamily: 'Impact, sans-serif',
-                                    letterSpacing: '0.05em',
                                     display: 'block',
                                     marginBottom: '0.1em',
                                 }}
                             >
-                                Every
-                            </span>
-                            <span
+                                <span
+                                    style={{
+                                        fontFamily: 'Impact, sans-serif',
+                                        letterSpacing: '0.05em',
+                                        marginRight: '0.3em',
+                                    }}
+                                >
+                                    Every
+                                </span>
+                                <span
+                                    style={{
+                                        fontFamily:
+                                            'Kumar One Outline, cursive',
+                                    }}
+                                >
+                                    Brand
+                                </span>
+                            </div>
+
+                            {/* Second line: Has its own Story */}
+                            <div
                                 style={{
-                                    fontFamily: 'Kumar One Outline, cursive',
-                                    display: 'block',
-                                    marginBottom: '0.15em',
-                                }}
-                            >
-                                Brand
-                            </span>
-                            <span
-                                style={{
-                                    fontFamily: 'Impact, sans-serif',
-                                    letterSpacing: '0.05em',
-                                    display: 'block',
-                                    marginBottom: '0.1em',
-                                }}
-                            >
-                                Has its own
-                            </span>
-                            <span
-                                style={{
-                                    fontFamily: 'Kumar One Outline, cursive',
                                     display: 'block',
                                     marginBottom: '0.2em',
                                 }}
                             >
-                                Story
-                            </span>
+                                <span
+                                    style={{
+                                        fontFamily: 'Impact, sans-serif',
+                                        letterSpacing: '0.05em',
+                                        marginRight: '0.3em',
+                                    }}
+                                >
+                                    Has its own
+                                </span>
+                                <span
+                                    style={{
+                                        fontFamily:
+                                            'Kumar One Outline, cursive',
+                                    }}
+                                >
+                                    Story
+                                </span>
+                            </div>
+
+                            {/* Third line: And we narrate it into visuals. */}
                             <span
                                 style={{
                                     display: 'block',
