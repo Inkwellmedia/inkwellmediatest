@@ -17,31 +17,31 @@ const TargetAudienceData = [
         icon: 'https://ik.imagekit.io/Shubham2285/ecommerce.png?updatedAt=1750931719188',
         tags: ['Product Demo Videos', 'Customer Testimonials', 'Promo Reels'],
     },
-    {
-        title: 'Corporate',
-        icon: 'https://ik.imagekit.io/Shubham2285/IMG_3252.png?updatedAt=1751018529209',
-        tags: ['Training Modules', 'Executive Profiles', 'Event Coverage'],
-    },
+    // {
+    //     title: 'Corporate',
+    //     icon: 'https://ik.imagekit.io/Shubham2285/IMG_3252.png?updatedAt=1751018529209',
+    //     tags: ['Training Modules', 'Executive Profiles', 'Event Coverage'],
+    // },
     {
         title: 'Startups',
         icon: 'https://ik.imagekit.io/Shubham2285/IMG_3250.png?updatedAt=1751018527259',
         tags: ['Brand Launch Films', 'Social Clips', 'Targeted Ads'],
     },
-    {
-        title: 'NGOs & Gov',
-        icon: 'https://ik.imagekit.io/Shubham2285/gov%20&%20ngos.png?updatedAt=1750931673325',
-        tags: ['Awareness Campaigns', 'Info Videos', 'Policy Explainers'],
-    },
-    {
-        title: 'Creators',
-        icon: 'https://ik.imagekit.io/Shubham2285/creator.png?updatedAt=1750931646261',
-        tags: ['Video Editing', 'On-Set Support', 'Post Production'],
-    },
-    {
-        title: 'Healthcare',
-        icon: 'https://ik.imagekit.io/Shubham2285/heathcare.png?updatedAt=1750931695627',
-        tags: ['Patient Education', 'Clinic Walkthroughs', 'Training Videos'],
-    },
+    // {
+    //     title: 'NGOs & Gov',
+    //     icon: 'https://ik.imagekit.io/Shubham2285/gov%20&%20ngos.png?updatedAt=1750931673325',
+    //     tags: ['Awareness Campaigns', 'Info Videos', 'Policy Explainers'],
+    // },
+    // {
+    //     title: 'Creators',
+    //     icon: 'https://ik.imagekit.io/Shubham2285/creator.png?updatedAt=1750931646261',
+    //     tags: ['Video Editing', 'On-Set Support', 'Post Production'],
+    // },
+    // {
+    //     title: 'Healthcare',
+    //     icon: 'https://ik.imagekit.io/Shubham2285/heathcare.png?updatedAt=1750931695627',
+    //     tags: ['Patient Education', 'Clinic Walkthroughs', 'Training Videos'],
+    // },
     {
         title: 'Education',
         icon: 'https://ik.imagekit.io/Shubham2285/Field%20Education.webp?updatedAt=1750931601612',
