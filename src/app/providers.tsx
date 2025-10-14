@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import SplashContextProvider from '@/context/splash/SplashContext';
-import React from 'react'
+// import SplashContextProvider from '@/context/splash/SplashContext';
+import React from 'react';
 
 type Props = {
-    children:React.ReactNode
-}
+    children: React.ReactNode;
+};
 
 function ContextProviders({ children }: Props) {
     return (
-        <SplashContextProvider>
-            {children}
-        </SplashContextProvider>
-    )
+        // <SplashContextProvider>
+        { children }
+        // </SplashContextProvider>
+    );
 }
 
-export default ContextProviders
+export default ContextProviders;
