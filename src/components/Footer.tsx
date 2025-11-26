@@ -1,11 +1,9 @@
-'use client'
+'use client';
 
-import React from 'react'
-import {
-    Box,
-    Container,
-    Typography,
-} from '@mui/material'
+import React from 'react';
+import { Box, Container, Typography } from '@mui/material';
+import logo from '../../public/inkwell-logo.png';
+import Image from 'next/image';
 // import {
 //     Facebook,
 //     Twitter,
@@ -24,8 +22,6 @@ import {
 //     }),
 // }
 
-const logoUrl =
-    'https://ik.imagekit.io/Shubham2285/logo.png?updatedAt=1751558258227';
 
 const socialLinks = [
     {
@@ -52,16 +48,18 @@ interface FooterProps {
 export default function Footer({ gradient }: FooterProps) {
     return (
         <Box
-            component="footer"
+            component='footer'
             sx={{
                 color: 'common.white',
                 pt: 6,
                 pb: 3,
-                background: gradient || 'linear-gradient(275deg, rgba(0, 0, 0, 1) 0%, rgba(54, 54, 54, 1) 50%, rgba(0, 0, 0, 1) 100%)',
+                background:
+                    gradient ||
+                    'linear-gradient(275deg, rgba(0, 0, 0, 1) 0%, rgba(54, 54, 54, 1) 50%, rgba(0, 0, 0, 1) 100%)',
                 position: 'relative',
             }}
         >
-            <Container maxWidth="lg">
+            <Container maxWidth='lg'>
                 <Box
                     sx={{
                         display: 'flex',
@@ -73,16 +71,31 @@ export default function Footer({ gradient }: FooterProps) {
                     }}
                 >
                     {/* Logo */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, mb: { xs: 2, md: 0 } }}>
-                        <Box
-                            component="img"
-                            src={logoUrl}
-                            alt="Inkwell Logo"
-                            sx={{ height: 90, width: 'auto', mr: 2 }}
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: { xs: 'center', md: 'flex-start' },
+                            mb: { xs: 2, md: 0 },
+                        }}
+                    >
+                        <Image
+                            src={logo}
+                            alt='Inkwell Media Logo'
+                            width={120}
+                            height={50}
+                            priority
                         />
                         <Typography
-                            variant="subtitle2"
-                            sx={{ fontStyle: 'italic', color: 'white', fontSize: '1.1rem', mt: 1, fontFamily: 'Nunito, sans-serif', textAlign: { xs: 'center', md: 'left' } }}
+                            variant='subtitle2'
+                            sx={{
+                                fontStyle: 'italic',
+                                color: 'white',
+                                fontSize: '1.1rem',
+                                mt: 1,
+                                fontFamily: 'Nunito, sans-serif',
+                                textAlign: { xs: 'center', md: 'left' },
+                            }}
                         >
                             {'Where imagination transforms into visuals'}
                         </Typography>
@@ -97,13 +110,23 @@ export default function Footer({ gradient }: FooterProps) {
                             mt: 0.5,
                         }}
                     >
-                        {socialLinks.map(link => (
-                            <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer">
+                        {socialLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
                                 <Box
-                                    component="img"
+                                    component='img'
                                     src={link.icon}
                                     alt={link.name}
-                                    sx={{ height: 28, width: 28, transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.15)' } }}
+                                    sx={{
+                                        height: 28,
+                                        width: 28,
+                                        transition: 'transform 0.2s',
+                                        '&:hover': { transform: 'scale(1.15)' },
+                                    }}
                                 />
                             </a>
                         ))}
@@ -119,24 +142,38 @@ export default function Footer({ gradient }: FooterProps) {
                             gap: 2,
                         }}
                     >
-                        {socialLinks.map(link => (
-                            <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer">
+                        {socialLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
                                 <Box
-                                    component="img"
+                                    component='img'
                                     src={link.icon}
                                     alt={link.name}
-                                    sx={{ height: 28, width: 28, transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.15)' } }}
+                                    sx={{
+                                        height: 28,
+                                        width: 28,
+                                        transition: 'transform 0.2s',
+                                        '&:hover': { transform: 'scale(1.15)' },
+                                    }}
                                 />
                             </a>
                         ))}
                     </Box>
                 </Box>
                 <Box sx={{ textAlign: 'center', mt: 2 }}>
-                        <Typography variant="body2" sx={{ opacity: 0.8, fontFamily: 'Nunito, sans-serif' }}>
-                        © {new Date().getFullYear()} InkwellMedia. All rights reserved.
-                        </Typography>
+                    <Typography
+                        variant='body2'
+                        sx={{ opacity: 0.8, fontFamily: 'Nunito, sans-serif' }}
+                    >
+                        © {new Date().getFullYear()} InkwellMedia. All rights
+                        reserved.
+                    </Typography>
                 </Box>
             </Container>
         </Box>
-    )
+    );
 }
